@@ -1,7 +1,7 @@
 {
   "name": "spotify-wrapper",
   "version": "1.0.0",
-  "description": "A simple wrapper for spotify, written in nodejs applying TDD.",
+  "description": "A wrapper to work with the Spotify Web API.",
   "main": "index.js",
   "scripts": {
     "clear": "rimraf lib",
