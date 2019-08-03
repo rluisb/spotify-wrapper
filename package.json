@@ -1,0 +1,54 @@
+{
+  "name": "spotify-wrapper",
+  "version": "1.0.0",
+  "description": "A simple wrapper for spotify, written in nodejs applying TDD.",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rimraf lib",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run test:coverage",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js  --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rluisb/spotify-wrapper.git"
+  },
+  "keywords": [
+    "nodejs",
+    "spotify",
+    "wrapper",
+    "tdd"
+  ],
+  "author": "Ricardo Conceição <ricardo220893@gmail.com> (https://github.com/rluisb)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rluisb/spotify-wrapper/issues"
+  },
+  "homepage": "https://github.com/rluisb/spotify-wrapper#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "rimraf": "^2.6.3"
+  }
+}
